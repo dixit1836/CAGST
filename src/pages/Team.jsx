@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 
 const Team = () => {
-  const [members, setMembers] = useState([
+  const [members] = useState([
     { id: 1, name: 'Amit Parmar', email: 'amit@example.com', role: 'Admin', status: 'Active', joined: 'Jan 15, 2024' },
     { id: 2, name: 'Sadhana Shah (CA)', email: 'ca.sadhana@audit.com', role: 'Tax Auditor', status: 'Active', joined: 'Feb 02, 2024' },
     { id: 3, name: 'Priya Mehta', email: 'priya@example.com', role: 'Accountant', status: 'Pending', joined: 'Feb 10, 2024' },

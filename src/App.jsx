@@ -16,22 +16,22 @@ import BankAI from './pages/BankAI';
 import Team from './pages/Team';
 import Clients from './pages/Clients';
 import Invoices from './pages/Invoices';
+import Settings from './pages/Settings';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const theme = localStorage.getItem('theme');
+    return theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  });
+  const [, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Check local storage for theme
-    const theme = localStorage.getItem('theme');
-    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      setIsDarkMode(true);
+    if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
-      setIsDarkMode(false);
       document.documentElement.classList.remove('dark');
     }
-  }, []);
+  }, [isDarkMode]);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
@@ -66,6 +66,7 @@ function App() {
           <Route path="team" element={<Team />} />
           <Route path="clients" element={<Clients />} />
           <Route path="invoices" element={<Invoices />} />
+          <Route path="settings" element={<Settings />} />
         </Route>
       </Routes>
     </Router>
