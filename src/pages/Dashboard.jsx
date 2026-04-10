@@ -1,4 +1,18 @@
 import { 
+  ResponsiveContainer, 
+  LineChart, 
+  Line, 
+  XAxis, 
+  YAxis, 
+  CartesianGrid, 
+  Tooltip, 
+  PieChart, 
+  Pie, 
+  Cell, 
+  BarChart, 
+  Bar 
+} from 'recharts';
+import { 
   FileText, 
   Upload as UploadIcon, 
   CheckCircle, 

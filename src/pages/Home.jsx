@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, FileText, CheckCircle, Globe2, ShieldCheck, Zap, Star, Users, TrendingUp, Clock, Play } from 'lucide-react';
+import { ArrowRight, Upload, FileText, CheckCircle, Globe2, ShieldCheck, Zap, Star, Users, TrendingUp, Clock, Play } from 'lucide-react';
 
 const Home = ({ isDarkMode }) => {
   const features = [
